@@ -34,7 +34,7 @@ void Domicilio::inicio(){
     cout << "</head>" <<endl;
     cout << "<body>   <div class='container'>"<<endl;
     //  this->listar();
-    cout<<"<div class='centrar'><h2>Agregar Domicilio</h2></div>"<<endl;
+    cout<<"<div class='centrar'><h2>Insertar Domicilio</h2></div>"<<endl;
     cout<<"<form  method='post'>"<<endl;
     cout<<"<label for='calle'>Calle</label>"<<endl;
     cout<<"<input type='text' id='calle' name='calle'>"<<endl;

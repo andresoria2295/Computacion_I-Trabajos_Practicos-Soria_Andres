@@ -19,10 +19,22 @@ int main (int argc, char* const argv[]) {
   map<string,string> Get;
   initializeGet(Get);
 
+
+
   cout<<"Content-type: text/html"<<endl<<endl;
+
+
+
+
+
+
 
   if (Get.find("eliminar")!=Get.end()){
       persona.eliminar(Get["eliminar"]);
+  }
+
+  if (Get.find("eliminar")!=Get.end()){
+      organizacion.eliminar(Get["eliminar"]);
   }
 
   if (Get.find("ide")!=Get.end() && Get.find("doc")!=Get.end() && Get.find("name")!=Get.end() && Get.find("lastname")!=Get.end() && Post.find("buttonchange")==Post.end() && Post.find("crear")==Post.end()){
@@ -49,11 +61,13 @@ int main (int argc, char* const argv[]) {
     persona.setNombre(Post["nombre2"]);
     persona.setApellido(Post["apellido2"]);
     persona.setDni(atol(Post["dni2"].c_str()));
+    organizacion.setid(atol(Post["org"].c_str()));
     string i=Post["id2"];
     string n=Post["nombre2"];
     string a=Post["apellido2"];
     string d=Post["dni2"];
-    persona.modificar(i,d,n,a);
+    string o=Post["org"];
+    persona.modificar(i,d,n,a,o);
     (new Persona())->inicio();
   }
 
@@ -79,7 +93,7 @@ int main (int argc, char* const argv[]) {
     organizacion.setNombre(Post["organizacion"]);
     organizacion.agregar();
   }
-  
+
   if(Post.find("crear3")!=Post.end())
   {
     domicilio.setCalle(Post["calle"]);

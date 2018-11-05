@@ -11,18 +11,21 @@ class Organizacion
 {
     public:
         Organizacion();
-        Organizacion(string);
+        Organizacion(string,int);
 
         void agregar();
         void listar();
-        void eliminar(int);
+        void eliminar(string);
         void inicio();
         void setNombre(string);
         string getNombre();
+        void setid(int);
+        int getid();
 
     protected:
 
     private:
         string nombre;
+        int id;
 };
 #endif // ORGANIZACION_H
