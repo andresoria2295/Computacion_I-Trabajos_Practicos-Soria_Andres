@@ -60,8 +60,8 @@ void Persona::listar()
 
     MyConnection myconnection;
     myconnection.connect();
-  //  sql::ResultSet* personas_organizaciones = myconnection.query("SELECT persona.id as id_persona, persona.nombre as nombre_persona, persona.apellido as apellido_persona, persona.dni as dni_persona, persona.idorganizacion as idorganizacion_persona, persona.iddomicilio as iddomicilio_persona, organizacion.nombre as nombre_organizacion, domicilio.calle as calle_domicilio, domicilio.numero as numero_domicilio FROM computacion.persona LEFT JOIN organizacion ON persona.idorganizacion = organizacion.id LEFT JOIN domicilio ON persona.iddomicilio = domicilio.id ORDER BY apellido_persona");
-    sql::ResultSet* personas_organizaciones = myconnection.query("SELECT persona.id as id_persona, persona.nombre as nombre_persona, persona.apellido as apellido_persona, persona.dni as dni_persona, persona.idorganizacion as idorganizacion_persona, organizacion.nombre as nombre_organizacion FROM computacion.persona LEFT JOIN organizacion ON persona.idorganizacion = organizacion.id ORDER BY apellido_persona");
+    sql::ResultSet* personas_organizaciones = myconnection.query("SELECT persona.id as id_persona, persona.nombre as nombre_persona, persona.apellido as apellido_persona, persona.dni as dni_persona, persona.idorganizacion as idorganizacion_persona, persona.iddomicilio as iddomicilio_persona, organizacion.nombre as nombre_organizacion, domicilio.calle as calle_domicilio, domicilio.numero as numero_domicilio FROM computacion.persona LEFT JOIN organizacion ON persona.idorganizacion = organizacion.id LEFT JOIN domicilio ON persona.iddomicilio = domicilio.id ORDER BY apellido_persona");
+    //sql::ResultSet* personas_organizaciones = myconnection.query("SELECT persona.id as id_persona, persona.nombre as nombre_persona, persona.apellido as apellido_persona, persona.dni as dni_persona, persona.idorganizacion as idorganizacion_persona, organizacion.nombre as nombre_organizacion FROM computacion.persona LEFT JOIN organizacion ON persona.idorganizacion = organizacion.id ORDER BY apellido_persona");
 
     while (personas_organizaciones->next()) {
         cout << "<tr>" << endl;
@@ -75,13 +75,13 @@ void Persona::listar()
         cout << personas_organizaciones->getString("nombre_persona") << endl;
         cout << "</td>" << endl;
         cout << "<td>" << endl;
-       cout << personas_organizaciones->getString("nombre_organizacion") << endl;
+        cout << personas_organizaciones->getString("nombre_organizacion") << endl;
         cout << "</td>" << endl;
-      //  cout << "<td>" << endl;
-       // cout << personas_organizaciones->getString("calle_domicilio") << endl;
-      //  cout << "-" << endl;
-       // cout << personas_organizaciones->getString("numero_domicilio") << endl;
-       // cout << "</td>" << endl;
+        cout << "<td>" << endl;
+        cout << personas_organizaciones->getString("calle_domicilio") << endl;
+        cout << "-" << endl;
+        cout << personas_organizaciones->getString("numero_domicilio") << endl;
+        cout << "</td>" << endl;
         cout << "<td>" << endl;
         cout << "<form method='post'>" << endl;
         cout << "<input type='hidden' name='eliminar_id' value="+personas_organizaciones->getString("id_persona") +">" << endl;
@@ -109,14 +109,14 @@ void Persona::listar()
 
         cout << "</td>" << endl;
         cout << "<td>" << endl;
-       /* cout << "<form method='post'>" << endl;
+        cout << "<form method='post'>" << endl;
         cout << "<input type='hidden' name='asignardom_idpersona' value="+personas_organizaciones->getString("id_persona") +">" << endl;
         cout << "<input type='hidden' name='dni' value="+personas_organizaciones->getString("dni_persona") +">" << endl;
         cout << "<input type='hidden' name='nombre' value="+personas_organizaciones->getString("nombre_persona") +">" << endl;
         cout << "<input type='hidden' name='apellido' value="+personas_organizaciones->getString("apellido_persona")+">" << endl;
         cout << "<button name='button_asignar_domicilio_form' type='submit'>Asignar Domicilio</button>"<<endl;
         cout << "</form>"<<endl;
-      */
+
 
         cout << "</td>" << endl;
     }
