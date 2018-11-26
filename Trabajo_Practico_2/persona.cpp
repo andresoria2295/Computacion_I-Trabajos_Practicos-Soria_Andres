@@ -26,8 +26,8 @@ void Persona::inicio(){
     cout<<"<link href='http://localhost/bootstrap.css' rel='stylesheet'>"<<endl;
     cout << "</head>" <<endl;
     cout << "<body>   <div class='container'>"<<endl;
-    cout<<"<div class='centrar'><h2>Personas Cargadas</h2></div>"<<endl;
-    cout << "<table border='3'>" << endl;
+    cout<<"<div class='centrar'><h3>Registro de personas:</h3></div>"<<endl;
+    cout << "<table border='1'>" << endl;
     cout << "<thead><tr>" << endl;
     cout << "<th >DNI</th>"<< endl;
     cout << "<th >Apellido</th>"<< endl;
@@ -40,7 +40,7 @@ void Persona::inicio(){
     cout << "</tr>" << endl;
     cout << "</tr></tbody>" << endl;
     cout << "</table>" << endl;
-    cout<<"<div class='centrar'><h2>Agregar Persona</h2></div>"<<endl;
+    cout<<"<div class='centrar'><h3>Insertar nueva persona:</h3></div>"<<endl;
     cout<<"<form class='form-signin'  method='post'>"<<endl;
     cout<<"<label for='nombre' class='sr-only'>Nombre</label>"<<endl;
     cout<<"<input type='text' id='nombre' name='nombre' class='form-control' placeholder='Nombre' required autofocus>"<<endl;
@@ -57,7 +57,7 @@ void Persona::inicio(){
 }
 void Persona::listar()
 {
-    
+
     MyConnection myconnection;
     myconnection.connect();
   //  sql::ResultSet* personas_organizaciones = myconnection.query("SELECT persona.id as id_persona, persona.nombre as nombre_persona, persona.apellido as apellido_persona, persona.dni as dni_persona, persona.idorganizacion as idorganizacion_persona, persona.iddomicilio as iddomicilio_persona, organizacion.nombre as nombre_organizacion, domicilio.calle as calle_domicilio, domicilio.numero as numero_domicilio FROM computacion.persona LEFT JOIN organizacion ON persona.idorganizacion = organizacion.id LEFT JOIN domicilio ON persona.iddomicilio = domicilio.id ORDER BY apellido_persona");
@@ -87,7 +87,7 @@ void Persona::listar()
         cout << "<input type='hidden' name='eliminar_id' value="+personas_organizaciones->getString("id_persona") +">" << endl;
         cout << "<button name='button_eliminar_form' type='submit'>Eliminar</button>"<<endl;
         cout << "</form>"<<endl;
-      
+
         cout << "</td>" << endl;
         cout << "<td>" << endl;
         cout << "<form method='post'>" << endl;
@@ -106,7 +106,7 @@ void Persona::listar()
         cout << "<input type='hidden' name='apellido' value="+personas_organizaciones->getString("apellido_persona")+">" << endl;
         cout << "<button name='button_asignar_organizacion_form' type='submit'>Asignar Organizacion</button>"<<endl;
         cout << "</form>"<<endl;
-      
+
         cout << "</td>" << endl;
         cout << "<td>" << endl;
        /* cout << "<form method='post'>" << endl;
@@ -117,7 +117,7 @@ void Persona::listar()
         cout << "<button name='button_asignar_domicilio_form' type='submit'>Asignar Domicilio</button>"<<endl;
         cout << "</form>"<<endl;
       */
-      
+
         cout << "</td>" << endl;
     }
 

@@ -33,7 +33,7 @@ void Organizacion::inicio(){
     cout << "<body>   <div class='container'>"<<endl;
     //  this->listar();
     cout << "</table>" << endl;
-    cout<<"<div><h2>Agregar Organizacion</h2></div>"<<endl;
+    cout<<"<div><h3>Insertar nueva organizacion:</h3></div>"<<endl;
     cout<<"<form  method='post'>"<<endl;
     cout<<"<label for='organizacion'>Organizacion</label>"<<endl;
     cout<<"<input type='text' id='organizacion' name='organizacion' placeholder='organizacion' required autofocus>"<<endl;
