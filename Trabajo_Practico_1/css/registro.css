@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background: #232323;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 77px;
+    z-index: 101;
+    transition: all 0s;
+    -ms-transition: all 0s;
+    -moz-transition: all .0s;
+    -webkit-transition: all .0s;
+}
+
+header img{
+  margin-top: 15px;
+  margin-left: 625px;
+}
+
+h1{
+    margin-top: 90px;
+    font: 900 15.5px/15px 'ProximaNova', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+}
+
+.col-md-6{
+  margin: auto;
+  padding: auto;
+  font-family: serif;
+  color: black;
+}
+
+#recuadro{
+    border-color: black;
+    margin-left: 20px;
+}
+
+.general{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.h_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 1.5em 0;
+}
+
+a:hover{
+    color: black;
+}
+
+.form{
+    margin-top:40px;
+    margin-bottom:40px;
+    margin-left:100px;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+.rojo{
+  Background-color: red;
+  Color: white;
+}
+
+.btn{
+  Background-color: red;
+  Color: white;
+}
+
+.enlace{
+  color: black;
+}
