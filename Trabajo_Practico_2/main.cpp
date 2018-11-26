@@ -5,7 +5,7 @@
 #include <typeinfo>
 #include "persona.h"
 #include "organizacion.h"
-//#include "domicilio.h"
+#include "domicilio.h"
 #include "myconnection.h"
 
 using namespace std;
@@ -14,7 +14,7 @@ int main (int argc, char* const argv[]) {
 
   Persona persona;
   Organizacion organizacion;
-  //Domicilio domicilio;
+  Domicilio domicilio;
 
   map<string,string> Post;
   initializePost(Post);
@@ -39,13 +39,13 @@ int main (int argc, char* const argv[]) {
     organizacion.asignar(Post["asignarorg_idpersona"]);
 
   }
-  /*
+
   if(Post.find("button_asignar_domicilio_form")!=Post.end())
   {
     domicilio.asignar(Post["asignardom_idpersona"]);
 
   }
-  */
+
 
 
   if(Post.find("button_asignar_organizacion")!=Post.end())
@@ -56,7 +56,7 @@ int main (int argc, char* const argv[]) {
     string id_organizacion=Post["sel_idorganizacion"];
     organizacion.cambiar(id_persona, id_organizacion);
   }
-/*
+
   if(Post.find("button_asignar_domicilio")!=Post.end())
   {
     domicilio.setid(atol(Post["sel_id_domicilio"].c_str()));
@@ -65,7 +65,7 @@ int main (int argc, char* const argv[]) {
     string id_domicilio=Post["sel_id_domicilio"];
     domicilio.cambiar(id_persona, id_domicilio);
   }
-*/
+
 
 
   if(Post.find("button_cambiar")!=Post.end())
@@ -112,7 +112,7 @@ if(Post.find("button_agregar_persona")==Post.end())
   {
     (new Persona())->inicio();
     (new Organizacion())->inicio();
-    //(new Domicilio())->inicio();
+    (new Domicilio())->inicio();
   }
 
 
@@ -133,7 +133,7 @@ if(Post.find("button_agregar_persona")==Post.end())
     }
 */
 
-/*
+
   if(Post.find("button_agregar_domicilio")!=Post.end())
   {
     domicilio.setCalle(Post["calle"]);
@@ -148,6 +148,5 @@ if(Post.find("button_agregar_persona")==Post.end())
     (new Domicilio())->inicio();
   }
 
-*/
   return 0;
 }

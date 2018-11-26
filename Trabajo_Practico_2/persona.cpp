@@ -27,7 +27,7 @@ void Persona::inicio(){
     cout << "</head>" <<endl;
     cout << "<body>   <div class='container'>"<<endl;
     cout<<"<div class='centrar'><h3>Registro de personas:</h3></div>"<<endl;
-    cout << "<table border='1'>" << endl;
+    cout << "<table border='5'>" << endl;
     cout << "<thead><tr>" << endl;
     cout << "<th >DNI</th>"<< endl;
     cout << "<th >Apellido</th>"<< endl;
